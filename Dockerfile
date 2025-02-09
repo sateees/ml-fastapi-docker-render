@@ -1,5 +1,5 @@
 # Stage 1: Builder image
-FROM python:3.9-slim AS builder
+FROM python:3.11-slim AS builder
 WORKDIR /app
 
 COPY requirements.txt .
@@ -9,7 +9,7 @@ COPY model ./model  # if you have your script in a `model` folder
 RUN python model/train_model.py  # This produces model.joblib
 
 # Stage 2: Final image
-FROM python:3.9-slim
+FROM python:3.11-slim
 WORKDIR /app
 
 COPY requirements.txt .
