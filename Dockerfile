@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the model files and the app code
-COPY model.joblib ./  # or COPY model/model.joblib ./ if saved there
+COPY model.joblib ./
 COPY app ./app
 # If you want to also include the training script, you can COPY model/train_model.py as well
 
