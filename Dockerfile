@@ -5,8 +5,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY model ./model  # if you have your script in a `model` folder
-RUN python model/train_model.py  # This produces model.joblib
+COPY model ./model
+RUN python model/train_model.py
 
 # Stage 2: Final image
 FROM python:3.11-slim
